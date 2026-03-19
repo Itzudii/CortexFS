@@ -539,6 +539,7 @@ Frontend ↔ Controller
   
 
 # 📦 Project Structure (Conceptual)
+```
 FS/
 │
 ├── frontend/
@@ -638,7 +639,7 @@ FS/
     ├── llama-2-7b-chat.Q4_K_M.gguf
     └── qwen2.5-1.5b-instruct-q8_0.gguf
  
-  
+```
 
 # 🔮 Future Improvements
 
