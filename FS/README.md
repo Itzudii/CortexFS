@@ -401,7 +401,23 @@ Frontend ↔ Controller
 
 - Searchable structure
 
-  
+
+# Search Techniques
+
+### Prifix Search
+- root -> DB
+- subtree -> memory (tree)
+- parent -> memory (tree)
+
+### Extension Search
+- root -> dictionary
+- subtree -> dictionary + memory (tree)
+- parent -> memory (tree)
+
+### Context Search
+- root -> DB
+- subtree -> DB
+- parent -> DB
 
 # 🧩 Separate Tag Generation Process
 
@@ -521,16 +537,9 @@ Frontend ↔ Controller
 ✅ Persistent indexed storage
 
   
-```
+
 # 📦 Project Structure (Conceptual)
 FS/
-│
-├── api.py
-├── cli.py
-├── controller.py
-├── fsmanager.py
-├── tag.py
-├── task.py
 │
 ├── frontend/
 │   ├── css/
@@ -577,10 +586,9 @@ FS/
 │   ├── error.log
 │   └── debug.log
 │
-├── model/
-│   ├── all-MiniLM-L6-v2/
-│   ├── qwen2.5-1.5b-instruct-q8_0.gguf
-│   └── llama-2-7b-chat.Q4_K_M.gguf
+├── Chatbot/
+│    ├── bot.py
+│    └── mpc.py
 │
 ├── watcher/
 │    ├── logs/
@@ -592,15 +600,24 @@ FS/
 │    ├── watcher_service.py
 │    └── run_watcher.bat
 │
+├── dependencies/
+│    ├── dict.py
+│    ├── fileReader.py
+│    ├── helperfuncUtils.py
+│    ├── icon.py
+│    ├── logmanager.py
+│    └── log_config.py
+│    └── stack.py
+│    └── storage.py
+│    └── tree.py
+│    └── vector.py
+│
+├── Scaffold/
+│    ├── parser.py
+│
 ├── .gitignore
 ├── README.md
 ├── requirements.txt
-│
-├── images/
-│   ├── control_flow.png
-│   ├── logo_transparent.png
-│   └── logo.jpeg
-│   └── new2.drawio
 │
 └── model/
     │
@@ -620,7 +637,7 @@ FS/
     │
     ├── llama-2-7b-chat.Q4_K_M.gguf
     └── qwen2.5-1.5b-instruct-q8_0.gguf
- ```
+ 
   
 
 # 🔮 Future Improvements
@@ -646,3 +663,7 @@ FS/
 - WebSocket real-time updates
 
 - Recycle bin
+
+
+
+Note: execute watcher.py in seperate terminal work as background process
